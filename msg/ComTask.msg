@@ -1,0 +1,6 @@
+std_msgs/Header header
+geometry_msgs/Vector3 position_actual
+geometry_msgs/Vector3 position_reference
+geometry_msgs/Vector3 velocity_actual
+geometry_msgs/Vector3 velocity_reference
+float64 cost
