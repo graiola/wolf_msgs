@@ -20,6 +20,7 @@ add_message_files(FILES
     TerrainEstimation.msg
     FrictionCones.msg
     CapturePoint.msg
+    ControllerState.msg
 )
 
 add_service_files(
