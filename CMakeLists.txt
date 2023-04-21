@@ -15,6 +15,7 @@ add_message_files(FILES
     CartesianTask.msg
     PosturalTask.msg
     ComTask.msg
+    WrenchTask.msg
     ContactForces.msg
     FootHolds.msg
     TerrainEstimation.msg
@@ -23,7 +24,7 @@ add_message_files(FILES
     ControllerState.msg
     planner/Cartesian.msg
     planner/Base.msg
-    planner/Force.msg
+    planner/Wrench.msg
     planner/Postural.msg
 )
 
