@@ -21,6 +21,10 @@ add_message_files(FILES
     FrictionCones.msg
     CapturePoint.msg
     ControllerState.msg
+    planner/Cartesian.msg
+    planner/Base.msg
+    planner/Force.msg
+    planner/Postural.msg
 )
 
 add_service_files(
