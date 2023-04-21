@@ -23,7 +23,7 @@ add_message_files(FILES
     CapturePoint.msg
     ControllerState.msg
     planner/Cartesian.msg
-    planner/Base.msg
+    planner/Com.msg
     planner/Wrench.msg
     planner/Postural.msg
 )
