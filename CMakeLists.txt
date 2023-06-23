@@ -31,6 +31,7 @@ add_message_files(FILES
 add_service_files(
     FILES
     float32.srv
+    string.srv
 )
 
 generate_messages(
