@@ -11,27 +11,43 @@ find_package(catkin REQUIRED COMPONENTS
     message_runtime
 )
 
-add_message_files(FILES
-    CartesianTask.msg
-    PosturalTask.msg
-    ComTask.msg
-    WrenchTask.msg
-    ContactForces.msg
-    FootHolds.msg
-    TerrainEstimation.msg
-    FrictionCones.msg
-    CapturePoint.msg
-    ControllerState.msg
-    Cartesian.msg
-    Com.msg
-    Wrench.msg
-    Postural.msg
+# wolf_controller messages
+add_message_files(
+    DIRECTORY 
+        msg/controller
+    FILES
+        CartesianTask.msg
+        PosturalTask.msg
+        ComTask.msg
+        WrenchTask.msg
+        ContactForces.msg
+        FootHolds.msg
+        TerrainEstimation.msg
+        FrictionCones.msg
+        CapturePoint.msg
+        ControllerState.msg
+        Cartesian.msg
+        Com.msg
+        Wrench.msg
+        Postural.msg
+)
+
+# wolf_navigation messages
+add_message_files(
+    DIRECTORY 
+        msg/navigation
+    FILES
+        Waypoint.msg
 )
 
 add_service_files(
     FILES
-    float32.srv
-    string.srv
+        common/Float32.srv
+        common/String.srv
+        navigation/TaskInfo.srv
+        navigation/TaskName.srv
+        navigation/AddWaypoint.srv
+        navigation/AddWaypoints.srv
 )
 
 generate_messages(

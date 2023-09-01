@@ -1,0 +1,6 @@
+string plugin
+string name
+string state
+uint16 priority
+---
+bool success
