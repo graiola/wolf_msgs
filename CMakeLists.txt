@@ -38,6 +38,8 @@ add_message_files(
         msg/navigation
     FILES
         Waypoint.msg
+        MapAnnotation.msg
+        MapAnnotations.msg
 )
 
 add_service_files(
