@@ -46,6 +46,7 @@ add_service_files(
     FILES
         common/Float32.srv
         common/String.srv
+        common/SetPose.srv
         navigation/TaskInfo.srv
         navigation/TaskName.srv
         navigation/AddWaypoint.srv
