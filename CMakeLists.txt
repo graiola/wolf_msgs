@@ -100,7 +100,7 @@ elseif(${ament_cmake_FOUND})
         "srv/navigation/TaskName.srv"
         "srv/navigation/AddWaypoint.srv"
         "srv/navigation/AddWaypoints.srv"
-        DEPENDENCIES std_msgs std_srvs
+        DEPENDENCIES std_msgs std_srvs geometry_msgs nav_msgs sensor_msgs
         LIBRARY_NAME ${PROJECT_NAME}
       )
 
