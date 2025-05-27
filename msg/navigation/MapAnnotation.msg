@@ -4,3 +4,4 @@ float32 lat
 float32 lon
 float32 alt
 geometry_msgs/Pose pose
+float32 score
