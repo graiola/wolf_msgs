@@ -44,6 +44,8 @@ if(${catkin_FOUND})
             Waypoint.msg
             MapAnnotation.msg
             MapAnnotations.msg
+            ImageOverlay.msg
+            ImageOverlayArray.msg
     )
 
     add_service_files(
@@ -59,6 +61,7 @@ if(${catkin_FOUND})
 
     generate_messages(
         DEPENDENCIES
+        sensor_msgs
         geometry_msgs
         std_msgs
     )
@@ -93,6 +96,8 @@ elseif(${ament_cmake_FOUND})
         "msg/navigation/Waypoint.msg"
         "msg/navigation/MapAnnotation.msg"
         "msg/navigation/MapAnnotations.msg"
+        "msg/navigation/ImageOverlay.msg"
+        "msg/navigation/ImageOverlayArray.msg"
         "srv/common/Float32.srv"
         "srv/common/String.srv"
         "srv/common/SetPose.srv"
