@@ -108,6 +108,19 @@ elseif(${ament_cmake_FOUND})
         DEPENDENCIES std_msgs std_srvs geometry_msgs nav_msgs sensor_msgs
         LIBRARY_NAME ${PROJECT_NAME}
       )
+      
+      # Install .srv files into install/share/wolf_msgs/srv/
+	install(
+	  DIRECTORY srv/navigation/
+	  DESTINATION share/${PROJECT_NAME}/srv
+	  FILES_MATCHING PATTERN "*.srv"
+	)
+
+	install(
+	  DIRECTORY srv/common/
+	  DESTINATION share/${PROJECT_NAME}/srv
+	  FILES_MATCHING PATTERN "*.srv"
+	)
 
     ament_export_dependencies(rosidl_default_runtime)
 
