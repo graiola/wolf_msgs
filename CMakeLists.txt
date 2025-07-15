@@ -18,7 +18,7 @@ if(${catkin_FOUND})
     # wolf_controller messages
     add_message_files(
         DIRECTORY
-            msg/controller
+            msg
         FILES
             CartesianTask.msg
             PosturalTask.msg
@@ -39,7 +39,7 @@ if(${catkin_FOUND})
     # wolf_navigation messages
     add_message_files(
         DIRECTORY
-            msg/navigation
+            msg
         FILES
             Waypoint.msg
             MapAnnotation.msg
@@ -50,13 +50,13 @@ if(${catkin_FOUND})
 
     add_service_files(
         FILES
-            common/Float32.srv
-            common/String.srv
-            common/SetPose.srv
-            navigation/TaskInfo.srv
-            navigation/TaskName.srv
-            navigation/AddWaypoint.srv
-            navigation/AddWaypoints.srv
+            Float32.srv
+            String.srv
+            SetPose.srv
+            TaskInfo.srv
+            TaskName.srv
+            AddWaypoint.srv
+            AddWaypoints.srv
     )
 
     generate_messages(
@@ -79,62 +79,35 @@ elseif(${ament_cmake_FOUND})
     find_package(nav_msgs REQUIRED)
 
     rosidl_generate_interfaces(${PROJECT_NAME}
-        "msg/controller/CartesianTask.msg"
-        "msg/controller/PosturalTask.msg"
-        "msg/controller/ComTask.msg"
-        "msg/controller/WrenchTask.msg"
-        "msg/controller/ContactForces.msg"
-        "msg/controller/FootHolds.msg"
-        "msg/controller/TerrainEstimation.msg"
-        "msg/controller/FrictionCones.msg"
-        "msg/controller/CapturePoint.msg"
-        "msg/controller/ControllerState.msg"
-        "msg/controller/Cartesian.msg"
-        "msg/controller/Com.msg"
-        "msg/controller/Wrench.msg"
-        "msg/controller/Postural.msg"
-        "msg/navigation/Waypoint.msg"
-        "msg/navigation/MapAnnotation.msg"
-        "msg/navigation/MapAnnotations.msg"
-        "msg/navigation/ImageOverlay.msg"
-        "msg/navigation/ImageOverlayArray.msg"
-        "srv/common/Float32.srv"
-        "srv/common/String.srv"
-        "srv/common/SetPose.srv"
-        "srv/navigation/TaskInfo.srv"
-        "srv/navigation/TaskName.srv"
-        "srv/navigation/AddWaypoint.srv"
-        "srv/navigation/AddWaypoints.srv"
+        "msg/CartesianTask.msg"
+        "msg/PosturalTask.msg"
+        "msg/ComTask.msg"
+        "msg/WrenchTask.msg"
+        "msg/ContactForces.msg"
+        "msg/FootHolds.msg"
+        "msg/TerrainEstimation.msg"
+        "msg/FrictionCones.msg"
+        "msg/CapturePoint.msg"
+        "msg/ControllerState.msg"
+        "msg/Cartesian.msg"
+        "msg/Com.msg"
+        "msg/Wrench.msg"
+        "msg/Postural.msg"
+        "msg/Waypoint.msg"
+        "msg/MapAnnotation.msg"
+        "msg/MapAnnotations.msg"
+        "msg/ImageOverlay.msg"
+        "msg/ImageOverlayArray.msg"
+        "srv/Float32.srv"
+        "srv/String.srv"
+        "srv/SetPose.srv"
+        "srv/TaskInfo.srv"
+        "srv/TaskName.srv"
+        "srv/AddWaypoint.srv"
+        "srv/AddWaypoints.srv"
         DEPENDENCIES std_msgs std_srvs geometry_msgs nav_msgs sensor_msgs
         LIBRARY_NAME ${PROJECT_NAME}
       )
-      
-      # Install .srv files into install/share/wolf_msgs/srv/
-	install(
-	  DIRECTORY srv/navigation/
-	  DESTINATION share/${PROJECT_NAME}/srv
-	  FILES_MATCHING PATTERN "*.srv"
-	)
-
-	install(
-	  DIRECTORY srv/common/
-	  DESTINATION share/${PROJECT_NAME}/srv
-	  FILES_MATCHING PATTERN "*.srv"
-	)
-	
-	
-      # Install .msg files into install/share/wolf_msgs/msg/
-	install(
-	  DIRECTORY msg/controller/
-	  DESTINATION share/${PROJECT_NAME}/msg
-	  FILES_MATCHING PATTERN "*.msg"
-	)
-
-	install(
-	  DIRECTORY msg/navigation/
-	  DESTINATION share/${PROJECT_NAME}/msg
-	  FILES_MATCHING PATTERN "*.msg"
-	)
 
     ament_export_dependencies(rosidl_default_runtime)
 
