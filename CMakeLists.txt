@@ -121,6 +121,20 @@ elseif(${ament_cmake_FOUND})
 	  DESTINATION share/${PROJECT_NAME}/srv
 	  FILES_MATCHING PATTERN "*.srv"
 	)
+	
+	
+      # Install .msg files into install/share/wolf_msgs/msg/
+	install(
+	  DIRECTORY msg/controller/
+	  DESTINATION share/${PROJECT_NAME}/msg
+	  FILES_MATCHING PATTERN "*.msg"
+	)
+
+	install(
+	  DIRECTORY msg/navigation/
+	  DESTINATION share/${PROJECT_NAME}/msg
+	  FILES_MATCHING PATTERN "*.msg"
+	)
 
     ament_export_dependencies(rosidl_default_runtime)
 
