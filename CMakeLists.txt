@@ -46,6 +46,7 @@ if(${catkin_FOUND})
             MapAnnotations.msg
             ImageOverlay.msg
             ImageOverlayArray.msg
+            Home.msg
     )
 
     add_service_files(
@@ -98,6 +99,7 @@ elseif(${ament_cmake_FOUND})
         "msg/MapAnnotations.msg"
         "msg/ImageOverlay.msg"
         "msg/ImageOverlayArray.msg"
+        "msg/Home.msg"
         "srv/Float32.srv"
         "srv/String.srv"
         "srv/SetPose.srv"
