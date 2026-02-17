@@ -46,6 +46,8 @@ if(${catkin_FOUND})
             MapAnnotations.msg
             ImageOverlay.msg
             ImageOverlayArray.msg
+            Object.msg
+            ObjectArray.msg
             Home.msg
     )
 
@@ -58,6 +60,7 @@ if(${catkin_FOUND})
             TaskName.srv
             AddWaypoint.srv
             AddWaypoints.srv
+            ComputeInference.srv
     )
 
     generate_messages(
@@ -99,6 +102,8 @@ elseif(${ament_cmake_FOUND})
         "msg/MapAnnotations.msg"
         "msg/ImageOverlay.msg"
         "msg/ImageOverlayArray.msg"
+        "msg/Object.msg"
+        "msg/ObjectArray.msg"
         "msg/Home.msg"
         "srv/Float32.srv"
         "srv/String.srv"
@@ -107,6 +112,7 @@ elseif(${ament_cmake_FOUND})
         "srv/TaskName.srv"
         "srv/AddWaypoint.srv"
         "srv/AddWaypoints.srv"
+        "srv/ComputeInference.srv"
         DEPENDENCIES std_msgs std_srvs geometry_msgs nav_msgs sensor_msgs
         LIBRARY_NAME ${PROJECT_NAME}
       )
@@ -116,4 +122,3 @@ elseif(${ament_cmake_FOUND})
     ament_package()
 
 endif()
-
