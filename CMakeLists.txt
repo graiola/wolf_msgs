@@ -20,6 +20,9 @@ if(${catkin_FOUND})
         DIRECTORY
             msg
         FILES
+            MpcInput.msg
+            MpcObservation.msg
+            MpcState.msg
             CartesianTask.msg
             PosturalTask.msg
             ComTask.msg
@@ -84,6 +87,9 @@ elseif(${ament_cmake_FOUND})
 
     rosidl_generate_interfaces(${PROJECT_NAME}
         "msg/CartesianTask.msg"
+        "msg/MpcInput.msg"
+        "msg/MpcObservation.msg"
+        "msg/MpcState.msg"
         "msg/PosturalTask.msg"
         "msg/ComTask.msg"
         "msg/WrenchTask.msg"
