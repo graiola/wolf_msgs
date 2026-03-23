@@ -4,7 +4,58 @@ project(wolf_msgs)
 find_package(catkin QUIET)
 find_package(ament_cmake QUIET)
 
-if(${catkin_FOUND})
+if(${ament_cmake_FOUND})
+
+    find_package(rosidl_default_generators REQUIRED)
+    find_package(std_msgs REQUIRED)
+    find_package(std_srvs REQUIRED)
+    find_package(geometry_msgs REQUIRED)
+    find_package(sensor_msgs REQUIRED)
+    find_package(nav_msgs REQUIRED)
+
+    rosidl_generate_interfaces(${PROJECT_NAME}
+        "msg/CartesianTask.msg"
+        "msg/MpcInput.msg"
+        "msg/MpcObservation.msg"
+        "msg/MpcState.msg"
+        "msg/PosturalTask.msg"
+        "msg/ComTask.msg"
+        "msg/WrenchTask.msg"
+        "msg/ContactForces.msg"
+        "msg/FootHolds.msg"
+        "msg/TerrainEstimation.msg"
+        "msg/FrictionCones.msg"
+        "msg/CapturePoint.msg"
+        "msg/ControllerState.msg"
+        "msg/Cartesian.msg"
+        "msg/Com.msg"
+        "msg/Wrench.msg"
+        "msg/Postural.msg"
+        "msg/Waypoint.msg"
+        "msg/MapAnnotation.msg"
+        "msg/MapAnnotations.msg"
+        "msg/ImageOverlay.msg"
+        "msg/ImageOverlayArray.msg"
+        "msg/Object.msg"
+        "msg/ObjectArray.msg"
+        "msg/Home.msg"
+        "srv/Float32.srv"
+        "srv/String.srv"
+        "srv/SetPose.srv"
+        "srv/TaskInfo.srv"
+        "srv/TaskName.srv"
+        "srv/AddWaypoint.srv"
+        "srv/AddWaypoints.srv"
+        "srv/ComputeInference.srv"
+        DEPENDENCIES std_msgs std_srvs geometry_msgs nav_msgs sensor_msgs
+        LIBRARY_NAME ${PROJECT_NAME}
+      )
+
+    ament_export_dependencies(rosidl_default_runtime)
+
+    ament_package()
+
+elseif(${catkin_FOUND})
 
     find_package(std_msgs REQUIRED)
     find_package(std_srvs REQUIRED)
@@ -75,56 +126,4 @@ if(${catkin_FOUND})
 
 
     catkin_package()
-
-elseif(${ament_cmake_FOUND})
-
-    find_package(rosidl_default_generators REQUIRED)
-    find_package(std_msgs REQUIRED)
-    find_package(std_srvs REQUIRED)
-    find_package(geometry_msgs REQUIRED)
-    find_package(sensor_msgs REQUIRED)
-    find_package(nav_msgs REQUIRED)
-
-    rosidl_generate_interfaces(${PROJECT_NAME}
-        "msg/CartesianTask.msg"
-        "msg/MpcInput.msg"
-        "msg/MpcObservation.msg"
-        "msg/MpcState.msg"
-        "msg/PosturalTask.msg"
-        "msg/ComTask.msg"
-        "msg/WrenchTask.msg"
-        "msg/ContactForces.msg"
-        "msg/FootHolds.msg"
-        "msg/TerrainEstimation.msg"
-        "msg/FrictionCones.msg"
-        "msg/CapturePoint.msg"
-        "msg/ControllerState.msg"
-        "msg/Cartesian.msg"
-        "msg/Com.msg"
-        "msg/Wrench.msg"
-        "msg/Postural.msg"
-        "msg/Waypoint.msg"
-        "msg/MapAnnotation.msg"
-        "msg/MapAnnotations.msg"
-        "msg/ImageOverlay.msg"
-        "msg/ImageOverlayArray.msg"
-        "msg/Object.msg"
-        "msg/ObjectArray.msg"
-        "msg/Home.msg"
-        "srv/Float32.srv"
-        "srv/String.srv"
-        "srv/SetPose.srv"
-        "srv/TaskInfo.srv"
-        "srv/TaskName.srv"
-        "srv/AddWaypoint.srv"
-        "srv/AddWaypoints.srv"
-        "srv/ComputeInference.srv"
-        DEPENDENCIES std_msgs std_srvs geometry_msgs nav_msgs sensor_msgs
-        LIBRARY_NAME ${PROJECT_NAME}
-      )
-
-    ament_export_dependencies(rosidl_default_runtime)
-
-    ament_package()
-
 endif()

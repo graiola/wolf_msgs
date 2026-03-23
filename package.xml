@@ -14,17 +14,17 @@
   <license>MIT</license>
 
   <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
-  <member_of_group condition="$ROS_VERSION == 2">rosidl_interface_packages</member_of_group>
-
+  <member_of_group>rosidl_interface_packages</member_of_group>
   <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
-  <depend condition="$ROS_VERSION == 1">message_generation</depend>
-  <depend condition="$ROS_VERSION == 1">message_runtime</depend>
 
   <depend>std_msgs</depend>
   <depend>std_srvs</depend>
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>nav_msgs</depend>
+  <depend condition="$ROS_VERSION == 1">message_generation</depend>
+  <depend condition="$ROS_VERSION == 1">message_runtime</depend>
+  <exec_depend condition="$ROS_VERSION == 2">rosidl_default_runtime</exec_depend>
 
   <export>
     <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
