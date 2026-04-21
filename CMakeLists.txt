@@ -39,6 +39,9 @@ if(${ament_cmake_FOUND})
         "msg/Object.msg"
         "msg/ObjectArray.msg"
         "msg/Home.msg"
+        "msg/Track.msg"
+        "msg/TrackArray.msg"
+        "msg/C2Command.msg"
         "srv/Float32.srv"
         "srv/String.srv"
         "srv/SetPose.srv"
@@ -103,6 +106,9 @@ elseif(${catkin_FOUND})
             Object.msg
             ObjectArray.msg
             Home.msg
+            Track.msg
+            TrackArray.msg
+            C2Command.msg
     )
 
     add_service_files(
