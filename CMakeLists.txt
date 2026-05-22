@@ -42,6 +42,13 @@ if(${ament_cmake_FOUND})
         "msg/Track.msg"
         "msg/TrackArray.msg"
         "msg/C2Command.msg"
+        "msg/C2CommandStatus.msg"
+        "msg/C2RobotState.msg"
+        "msg/C2RobotStateArray.msg"
+        "msg/C2CameraFeed.msg"
+        "msg/C2CameraFeedArray.msg"
+        "msg/C2ManualControlCommand.msg"
+        "msg/C2MapState.msg"
         "srv/Float32.srv"
         "srv/String.srv"
         "srv/SetPose.srv"
@@ -109,6 +116,13 @@ elseif(${catkin_FOUND})
             Track.msg
             TrackArray.msg
             C2Command.msg
+            C2CommandStatus.msg
+            C2RobotState.msg
+            C2RobotStateArray.msg
+            C2CameraFeed.msg
+            C2CameraFeedArray.msg
+            C2ManualControlCommand.msg
+            C2MapState.msg
     )
 
     add_service_files(
