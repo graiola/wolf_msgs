@@ -32,23 +32,9 @@ if(${ament_cmake_FOUND})
         "msg/Wrench.msg"
         "msg/Postural.msg"
         "msg/Waypoint.msg"
-        "msg/MapAnnotation.msg"
-        "msg/MapAnnotations.msg"
-        "msg/ImageOverlay.msg"
-        "msg/ImageOverlayArray.msg"
         "msg/Object.msg"
         "msg/ObjectArray.msg"
         "msg/Home.msg"
-        "msg/Track.msg"
-        "msg/TrackArray.msg"
-        "msg/C2Command.msg"
-        "msg/C2CommandStatus.msg"
-        "msg/C2RobotState.msg"
-        "msg/C2RobotStateArray.msg"
-        "msg/C2CameraFeed.msg"
-        "msg/C2CameraFeedArray.msg"
-        "msg/C2ManualControlCommand.msg"
-        "msg/C2MapState.msg"
         "srv/Float32.srv"
         "srv/String.srv"
         "srv/SetPose.srv"
@@ -106,23 +92,9 @@ elseif(${catkin_FOUND})
             msg
         FILES
             Waypoint.msg
-            MapAnnotation.msg
-            MapAnnotations.msg
-            ImageOverlay.msg
-            ImageOverlayArray.msg
             Object.msg
             ObjectArray.msg
             Home.msg
-            Track.msg
-            TrackArray.msg
-            C2Command.msg
-            C2CommandStatus.msg
-            C2RobotState.msg
-            C2RobotStateArray.msg
-            C2CameraFeed.msg
-            C2CameraFeedArray.msg
-            C2ManualControlCommand.msg
-            C2MapState.msg
     )
 
     add_service_files(
