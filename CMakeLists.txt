@@ -38,6 +38,7 @@ if(${ament_cmake_FOUND})
         "srv/Float32.srv"
         "srv/String.srv"
         "srv/SetPose.srv"
+        "srv/SetPoseStamped.srv"
         "srv/TaskInfo.srv"
         "srv/TaskName.srv"
         "srv/AddWaypoint.srv"
@@ -102,6 +103,7 @@ elseif(${catkin_FOUND})
             Float32.srv
             String.srv
             SetPose.srv
+            SetPoseStamped.srv
             TaskInfo.srv
             TaskName.srv
             AddWaypoint.srv
