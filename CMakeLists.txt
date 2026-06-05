@@ -14,6 +14,8 @@ if(${ament_cmake_FOUND})
     find_package(nav_msgs REQUIRED)
 
     rosidl_generate_interfaces(${PROJECT_NAME}
+        "msg/MapAnnotation.msg"
+        "msg/MapAnnotations.msg"
         "msg/CartesianTask.msg"
         "msg/MpcInput.msg"
         "msg/MpcObservation.msg"
@@ -92,6 +94,8 @@ elseif(${catkin_FOUND})
         DIRECTORY
             msg
         FILES
+    	    MapAnnotation.msg
+            MapAnnotations.msg
             Waypoint.msg
             Object.msg
             ObjectArray.msg
