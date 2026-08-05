@@ -1,0 +1,6 @@
+uint32 client_protocol_version
+---
+uint32 protocol_version
+string supported_mode
+bool success
+string message

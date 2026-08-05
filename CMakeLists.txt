@@ -37,6 +37,7 @@ if(${ament_cmake_FOUND})
         "msg/Object.msg"
         "msg/ObjectArray.msg"
         "msg/Home.msg"
+        "msg/NavigationExecutionStatus.msg"
         "srv/Float32.srv"
         "srv/String.srv"
         "srv/SetPose.srv"
@@ -46,6 +47,7 @@ if(${ament_cmake_FOUND})
         "srv/AddWaypoint.srv"
         "srv/AddWaypoints.srv"
         "srv/ComputeInference.srv"
+        "srv/GetNavigationCapabilities.srv"
         DEPENDENCIES std_msgs std_srvs geometry_msgs nav_msgs sensor_msgs
         LIBRARY_NAME ${PROJECT_NAME}
       )
@@ -100,6 +102,7 @@ elseif(${catkin_FOUND})
             Object.msg
             ObjectArray.msg
             Home.msg
+            NavigationExecutionStatus.msg
     )
 
     add_service_files(
@@ -113,6 +116,7 @@ elseif(${catkin_FOUND})
             AddWaypoint.srv
             AddWaypoints.srv
             ComputeInference.srv
+            GetNavigationCapabilities.srv
     )
 
     generate_messages(
